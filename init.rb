@@ -21,7 +21,7 @@ Redmine::Plugin.register :redmine_stealth do
   extend Redmine::I18n
 
   plugin_locale_glob = respond_to?(:directory) ?
-    File.join(directory, 'config', 'locales', '*.yml') :
+    File.join(File.dirname(__FILE__), 'config', 'locales', '*.yml') :
     File.join(Rails.root, 'vendor', 'plugins',
               'redmine_stealth', 'config', 'locales', '*.yml')
 
@@ -38,7 +38,7 @@ Redmine::Plugin.register :redmine_stealth do
   author      'Riley Lynch'
   description 'Enables users to disable Redmine email notifications ' +
               'for their actions'
-  version     '0.6.0'
+  version     '0.6.0-oru'
 
   if respond_to?(:url)
     url 'http://teleological.github.com/redmine_stealth'
